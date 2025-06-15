@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <title>Gestion d'école</title>
     <style>
     .active {
@@ -62,7 +63,7 @@
                 <p class="text-info">admin</p>
                 <hr />
                 <nav class="text-start p-2 ">
-                    <a class="nav-link p-2" href="dash.php">
+                    <a class="nav-link p-2" href="index.php">
                         <i class="bi bi-speedometer2 fs-5 me-2"></i>&nbsp;Dashboard
                     </a>
                     <br />
@@ -90,9 +91,11 @@
             <div class='col'>
                 <div class='row'>
                     <div class="col-md d-flex justify-content-between" style="background-color: #ededed">
-                        <label class="btn" style="font-size : x-large" for="menu"><i class="bi bi-arrow-right-circle"></i></label>
+                        <label class="btn" style="font-size : x-large" for="menu"><i
+                                class="bi bi-arrow-right-circle"></i></label>
                         <form class="d-flex my-2">
-                            <input class="me-2 form-control" type="search" id="myInput" placeholder="  🔍     Search...   " />
+                            <input class="me-2 form-control" type="search" id="myInput"
+                                placeholder="  🔍     Search...   " />
                             <button class="btn border-dark"><i class="bi bi-search"></i></button>
                         </form>
                     </div>
@@ -132,7 +135,8 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span
+                                            class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -144,7 +148,8 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span
+                                            class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -156,7 +161,8 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span
+                                            class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -170,7 +176,9 @@
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
