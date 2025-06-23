@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-3 text-primary" href="#">FormationPro</a>
+            <a class="navbar-brand fs-3 text-primary fw-bolder" href="#">FormationPro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,7 +49,7 @@
                         Découvrez notre large catalogue de formations professionnelles conçues par des experts
                         pour vous accompagner dans votre évolution de carrière.
                     </p>
-                    <a href="#formations" class="btn btn-primary btn-lg">Explorer les formations</a>
+                    <a href="#formations" class="btn btn-primary bg-primary  bg-opacity-75 btn-lg">Explorer les formations</a>
                 </div>
             </div>
         </div>
@@ -96,12 +96,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card category-card shadow-sm border-0 h-100">
                         <div class="card-body p-4">
-                            <div class="icon-box bg-primary bg-opacity-10 text-primary">💻</div>
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary ">💻</div>
                             <h4 class="card-title fw-bold">Informatique & Tech</h4>
                             <p class="card-text text-muted mb-3">
                                 Développement web, intelligence artificielle, cybersécurité, data science
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -117,7 +117,7 @@
                             <p class="card-text text-muted mb-3">
                                 Leadership, gestion de projet, stratégie d'entreprise, ressources humaines
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -133,7 +133,7 @@
                             <p class="card-text text-muted mb-3">
                                 Design graphique, UX/UI, photographie, animation 3D
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -149,7 +149,7 @@
                             <p class="card-text text-muted mb-3">
                                 Marketing digital, réseaux sociaux, SEO, techniques de vente
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -165,7 +165,7 @@
                             <p class="card-text text-muted mb-3">
                                 Formation médicale, nutrition, fitness, développement personnel
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -181,7 +181,7 @@
                             <p class="card-text text-muted mb-3">
                                 Apprentissage des langues, culture internationale, communication
                             </p>
-                            <a href="#" class="text-primary fw-semibold text-decoration-none">
+                            <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
                                 Voir les formations <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -259,7 +259,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 px-0 bg-primary text-white text-center">
+    <section class="py-5 px-0 bg-primary  bg-opacity-75 text-white text-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -296,7 +296,7 @@
                 <textarea class="form-control" id="message" rows="5" placeholder="Votre message ici..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-primary bg-primary  bg-opacity-75">Envoyer</button>
         </form>
     </div>
 

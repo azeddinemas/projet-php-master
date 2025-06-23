@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Client/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <title>Gestion d'école</title>
     <style>
     .active {
@@ -55,10 +55,10 @@
             <div style="background:#EDEDED" id="sid" class="col-auto col-xl-2 min-vh-100 text-center">
                 <label for="menu" id="label" class="btn float-end"><i class="bi bi-arrow-left-circle fs-3"></i></label>
                 <h3 class="text-start pt-2">
-                    <span class="text-info">|</span>Formation
+                    <span class="text-info">|</span>FormationPro
                 </h3>
                 <br />
-                <img src="pic-1.png" class="rounded rounded-circle w-50" alt="">
+                <img src="../assets/pic-1.png" class="rounded rounded-circle w-50" alt="">
                 <h4>ADMIN</h4>
                 <p class="text-info">admin</p>
                 <hr />
@@ -91,11 +91,9 @@
             <div class='col'>
                 <div class='row'>
                     <div class="col-md d-flex justify-content-between" style="background-color: #ededed">
-                        <label class="btn" style="font-size : x-large" for="menu"><i
-                                class="bi bi-arrow-right-circle"></i></label>
+                        <label class="btn" style="font-size : x-large" for="menu"><i class="bi bi-arrow-right-circle"></i></label>
                         <form class="d-flex my-2">
-                            <input class="me-2 form-control" type="search" id="myInput"
-                                placeholder="  🔍     Search...   " />
+                            <input class="me-2 form-control" type="search" id="myInput" placeholder="  🔍     Search...   " />
                             <button class="btn border-dark"><i class="bi bi-search"></i></button>
                         </form>
                     </div>
@@ -117,7 +115,7 @@
                         </div>
                     </div>
                     <hr />
-                    <div style="width: 99%, margin: auto" class="row overflow-auto">
+                    <div style="width: 99%; margin: auto" class="row overflow-auto">
                         <table class="table table-bordered" id="myTable">
                             <thead>
                                 <tr style="color: #acacac">
@@ -135,8 +133,7 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span
-                                            class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -148,8 +145,7 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span
-                                            class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -161,8 +157,7 @@
                                     <td>{data.email}</td>
                                     <td>{data.phone}</td>
                                     <td>{data.organism?data.organism.name:''}</td>
-                                    <td><span class="badge text-bg-success">Activé</span>:<span
-                                            class="badge text-bg-danger">Désactivé</span></td>
+                                    <td><span class="badge text-bg-success">Activé</span>:<span class="badge text-bg-danger">Désactivé</span></td>
                                     <td class="d-flex flex-row justify-content-end">
                                         <div class='text-nowrap'>
                                             <button class="btn btn-outline-warning">{ 'activer'}</button>
@@ -176,8 +171,7 @@
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
 </body>
 
