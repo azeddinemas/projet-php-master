@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2025 at 02:21 PM
+-- Generation Time: Jul 01, 2025 at 07:57 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `g-formation`
+-- Database: `gestion_formation`
 --
 
 -- --------------------------------------------------------
@@ -117,7 +117,8 @@ CREATE TABLE `formation` (
 
 INSERT INTO `formation` (`id`, `price`, `mode`, `ville_id`, `formateur_id`) VALUES
 (1, '500.00', 'Présentiel', 1, 1),
-(2, '100.00', 'En ligne', 2, 2);
+(2, '100.00', 'En ligne', 2, 2),
+(3, '300.00', 'Hybride', 5, 2);
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,9 @@ CREATE TABLE `formationdate` (
 --
 
 INSERT INTO `formationdate` (`id`, `date`, `formation_id`) VALUES
-(1, '2025-05-31', 1);
+(2, '2025-07-12', 1),
+(3, '2025-07-12', 2),
+(4, '2025-05-07', 3);
 
 -- --------------------------------------------------------
 
@@ -317,13 +320,13 @@ ALTER TABLE `formateur`
 -- AUTO_INCREMENT for table `formation`
 --
 ALTER TABLE `formation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `formationdate`
 --
 ALTER TABLE `formationdate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `inscription`
