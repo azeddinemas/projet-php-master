@@ -132,7 +132,7 @@
                             <input type="date" class="form-control" onChange={handlechange} placeholder='date fin' name="fin" />
                         </div>
                         <div class='mt-2'>
-                            <button type="button" onClick={handleSubmit} class="btn btn-info text-white mt-4">Modifie</button>
+                            <button type="button" onClick={handleSubmit} class="bg-primary  bg-opacity-75 text-white mt-4">Modifie</button>
 
                             <a href="landing.php"><button type="button" onClick="" class="btn btn-secondary text-white mt-4">retoure</button></a>
                         </div>
