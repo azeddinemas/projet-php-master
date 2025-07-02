@@ -33,8 +33,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci distinctio</p>
                             <P>mode de formation : <span class="badge rounded-pill text-bg-success"><?= $formation['mode'] ?></span></P>
                             <P>Formateur : <?= $formation['firstName'] .' '.$formation['lastName']  ?></P>
-                            <P>la date de formation : <span><?= $formation['date'] ?></span></P>
-                            <form method="POST" action="inscription.php">
+                            <form method="POST" action="details.php">
                                 <!-- <input type="hidden" name="reserve" value="<?= $product[1]?>"> -->
                                 <button type="submit" name="addreservation" class="btn bg-primary  bg-opacity-75 text-white">Inscription</button>
                             </form>
