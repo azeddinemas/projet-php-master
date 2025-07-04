@@ -2,7 +2,7 @@
 require_once 'Db.php';
 
 class Formation extends Database {
-    private $table = "formations";
+    private $table = "formation";
     private $conn;
     private $id;
     private $price;
@@ -13,10 +13,11 @@ class Formation extends Database {
         $this->conn = $database->connection();
     }
 
-    public function getAll() {
-        $sql = $this->conn->query("SELECT * FROM formation 
-        INNER JOIN formateur ON formation.formateur_id = formateur.id
-        INNER JOIN ville ON formation.ville_id = ville.id;");
+    public function getAll($id) {
+        $sql = $this->conn->query("SELECT formation.*, formateur.lastName , formateur.firstName , ville.value  FROM $this->table
+        INNER JOIN formateur ON formateur_id = formateur.id
+        INNER JOIN ville ON ville_id = ville.id
+        WHERE domain_id = $id;");
 
         if ($sql && $sql->num_rows > 0) {
             return $sql->fetch_all(MYSQLI_ASSOC);
@@ -24,7 +25,14 @@ class Formation extends Database {
 
         return [];
     }
-
+    
+    public function getById() {
+        $query = "SELECT * FROM $this->table  inner join formateur on formateur_id = formateur.id
+        inner join ville on ville_id = ville.id WHERE $this->table.id = $this->id";
+        $stmt = $this->conn->query($query);
+        return $stmt->fetch_assoc();
+    }
+    
     // public function create($titre, $description) {
     //     $query = "INSERT INTO $this->table (titre, description) VALUES (:titre, :description)";
     //     $stmt = $this->conn->prepare($query);
@@ -43,11 +51,6 @@ class Formation extends Database {
     //     return $stmt->execute(['id' => $id]);
     // }
 
-    public function getById($id) {
-        $query = "SELECT * FROM $this->table WHERE id = $id";
-        $stmt = $this->conn->query($query);
-        return $stmt->fetch();
-    }
 
     
 
@@ -58,6 +61,8 @@ class Formation extends Database {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    
+    public function setId($id) {
+        $this->id = $id;
+    }
 
 }

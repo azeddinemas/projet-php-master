@@ -10,6 +10,7 @@
             echo "Connexion réussie !";
             return $con;      
         }
+        
     }
 
 ?>

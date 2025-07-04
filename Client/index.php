@@ -1,5 +1,17 @@
 <?php
     include "header.php";
+    require_once '../domain.php';
+
+    $domain = new Domain();
+    $domains = $domain->getAllDomain();
+    $icons = [
+        'Informatique & Tech' => '💻',
+        'Business & Management' => '📊',
+        'Design & Créativité' => '🎨',
+        'Marketing & Vente' => '📈',
+        'Santé & Bien-être' => '🏥',
+        'Langues & Culture' => '🌍'
+    ];
 ?>
 <section class="hero-section text-center">
     <div class="container">
@@ -56,101 +68,22 @@
         </div>
 
         <div class="row g-4">
-            <!-- Category Card 1 -->
+            <?php foreach ($domains as $domain): ?>
             <div class="col-lg-4 col-md-6">
                 <div class="card category-card shadow-sm border-0 h-100">
                     <div class="card-body p-4">
-                        <div class="icon-box bg-primary bg-opacity-10 text-primary ">💻</div>
-                        <h4 class="card-title fw-bold">Informatique & Tech</h4>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary "><?= $icons[$domain['name']] ?></div>
+                        <h4 class="card-title fw-bold"><?= $domain['name']; ?></h4>
                         <p class="card-text text-muted mb-3">
-                            Développement web, intelligence artificielle, cybersécurité, data science
+                            <?= $domain['description']; ?>
                         </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
+                        <a href="formationListe.php?id=<?= $domain['id']; ?>&name=<?= urlencode($domain['name']); ?>" class="text-primary fw-semibold text-decoration-none">
                             Voir les formations <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Category Card 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card category-card shadow-sm border-0 h-100">
-                    <div class="card-body p-4">
-                        <div class="icon-box bg-warning bg-opacity-10 text-warning">📊</div>
-                        <h4 class="card-title fw-bold">Business & Management</h4>
-                        <p class="card-text text-muted mb-3">
-                            Leadership, gestion de projet, stratégie d'entreprise, ressources humaines
-                        </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
-                            Voir les formations <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category Card 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card category-card shadow-sm border-0 h-100">
-                    <div class="card-body p-4">
-                        <div class="icon-box bg-success bg-opacity-10 text-success">🎨</div>
-                        <h4 class="card-title fw-bold">Design & Créativité</h4>
-                        <p class="card-text text-muted mb-3">
-                            Design graphique, UX/UI, photographie, animation 3D
-                        </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
-                            Voir les formations <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category Card 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card category-card shadow-sm border-0 h-100">
-                    <div class="card-body p-4">
-                        <div class="icon-box bg-info bg-opacity-10 text-info">📈</div>
-                        <h4 class="card-title fw-bold">Marketing & Vente</h4>
-                        <p class="card-text text-muted mb-3">
-                            Marketing digital, réseaux sociaux, SEO, techniques de vente
-                        </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
-                            Voir les formations <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category Card 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card category-card shadow-sm border-0 h-100">
-                    <div class="card-body p-4">
-                        <div class="icon-box bg-danger bg-opacity-10 text-danger">🏥</div>
-                        <h4 class="card-title fw-bold">Santé & Bien-être</h4>
-                        <p class="card-text text-muted mb-3">
-                            Formation médicale, nutrition, fitness, développement personnel
-                        </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
-                            Voir les formations <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category Card 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card category-card shadow-sm border-0 h-100">
-                    <div class="card-body p-4">
-                        <div class="icon-box bg-secondary bg-opacity-10 text-secondary">🌍</div>
-                        <h4 class="card-title fw-bold">Langues & Culture</h4>
-                        <p class="card-text text-muted mb-3">
-                            Apprentissage des langues, culture internationale, communication
-                        </p>
-                        <a href="formationListe.php" class="text-primary fw-semibold text-decoration-none">
-                            Voir les formations <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
