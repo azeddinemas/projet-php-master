@@ -16,8 +16,10 @@
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Album Formations dans le domaine de <?= $_GET['name'] ?></h1>
-                <p class="lead text-muted">Découvrez notre large catalogue de formations professionnelles conçues par des experts pour vous accompagner dans votre évolution de carrière.</p>
-                <a href="#" class="btn bg-primary  bg-opacity-75 my-2 text-white" onclick="history.back()">Main call to action</a>
+                <p class="lead text-muted">Découvrez notre large catalogue de formations professionnelles conçues par
+                    des experts pour vous accompagner dans votre évolution de carrière.</p>
+                <a href="#" class="btn bg-primary  bg-opacity-75 my-2 text-white" onclick="history.back()">Main call to
+                    action</a>
             </div>
         </div>
     </section>
@@ -31,7 +33,7 @@
                 </div>
                 <?php endif; ?>
                 <?php foreach ($formations as $formation): ?>
-                <!-- <pre> <?php print_r($formation); ?> </pre> -->
+
                 <div class="col">
                     <div class="card shadow p-2 mb-5 rounded">
                         <img src="../assets/p-6.jpeg" class="card-img-top rounded-3">
@@ -39,13 +41,15 @@
                             <i class="bi bi-geo fs-3 align-middle text-info"></i>&nbsp;<?= $formation['value'] ?>
                         </p>
                         <div class="card-body">
-                            <h5 class="card-title fs-3"><?= $formation['name'] ?>&nbsp;<span class="text-secondary fs-5 fw-lighter"><?= $formation['price'] ?> dh</span></h5>
+                            <h5 class="card-title fs-3">
+                                <?= $formation['name'] ?>&nbsp;<span class="text-secondary fs-5 fw-lighter"><?= $formation['price'] ?> dh</span>
+                            </h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci distinctio</p>
                             <P>mode de formation : <span class="badge rounded-pill text-bg-success"><?= $formation['mode'] ?></span></P>
                             <P>Formateur : <?= $formation['firstName'] .' '.$formation['lastName']  ?></P>
                             <form method="POST" action="details.php">
                                 <input type="hidden" name="id" value="<?= $formation['id'] ?>">
-                                <button type="submit" class="btn bg-primary  bg-opacity-75 text-white">Inscription</button>
+                                <button type="submit" class="btn bg-primary  bg-opacity-75 text-white">Voir détails</button>
                             </form>
                         </div>
                     </div>
