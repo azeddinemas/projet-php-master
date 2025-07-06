@@ -17,6 +17,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
+                <?php if (isset($_COOKIE['inscrit']) && !empty($_COOKIE['inscrit'])) {
+                    echo "<div class='alert alert-success' role='alert'>Bienvenue " . htmlspecialchars($_COOKIE['inscrit']) . " !</div>";
+                } ?>
+                <!-- <?= isset($_COOKIE['inscrit'])&& $_COOKIE['inscrit']?> -->
                 <h1 class="display-3 fw-bold mb-4">
                     Développez vos <span class="text-primary">compétences</span><br>
                     dans tous les domaines

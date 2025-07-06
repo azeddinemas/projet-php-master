@@ -17,22 +17,20 @@
         <div class="col-md-6">
             <img src="../assets/p-6.jpeg" alt="..." class="img-fluid" />
         </div>
-        <!-- <?php print_r($detail); ?> -->
         <div class="col-md-6">
             <button type="button" onClick="history.back()" class="btn btn-sm bg-primary bg-opacity-75 text-white m-2">
                 <i class="bi bi-arrow-left fs-4 text-white"></i>
             </button>
-            <!-- <?= $_POST['id'] ?> -->
 
             <h2 class="mb-3"><span class="fs-5 text-muted">formation de : </span><?= $detail["name"]?></h2>
-            <p class='fs-5 text-muted'> Formateur : <span><?= $detail['firstName'] . ' ' . $detail['lastName'] ?></span>
-            </p>
+            <p class='fs-5 text-muted'>Formateur : <span><?= $detail['firstName'] . ' ' . $detail['lastName'] ?></span></p>
 
             <p class='my-3 text-muted'>description : <?=$detail['description']?></p>
             <p class='my-3 fs-5 text-muted'>mode de formation : <?=$detail['mode']?> </p>
             <p class='my-3 fs-5 text-muted'>ville : <?=$detail['value']?> </p>
             <h3 class='my-3'>prix : <?= $detail['price']?> DH </h3>
-            <form action="inscription.php" method="POST">
+            <form action="formInscription.php" method="GET">
+                <input type="hidden" name="formation_id" value="<?= $_POST['id']?>">
                 <button class="btn bg-primary bg-opacity-75 text-white mt-4">Inscription</button>
             </form>
         </div>

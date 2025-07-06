@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 04, 2025 at 06:11 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Host: 127.0.0.1:3307
+-- Generation Time: Jul 06, 2025 at 10:19 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `domaine` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `domaine`
@@ -57,7 +57,7 @@ CREATE TABLE `formateur` (
   `lastName` varchar(100) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `photo` blob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `formateur`
@@ -81,20 +81,20 @@ CREATE TABLE `formation` (
   `ville_id` int(11) DEFAULT NULL,
   `formateur_id` int(11) DEFAULT NULL,
   `domain_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `formation`
 --
 
 INSERT INTO `formation` (`id`, `name`, `price`, `mode`, `ville_id`, `formateur_id`, `domain_id`) VALUES
-(4, 'JEE', '500.00', 'Présentiel', 1, 1, 4),
-(5, 'MERN Stack', '500.00', 'Hybride', 1, 2, 4),
-(6, 'Spring Boot', '100.00', 'Présentiel', 5, 1, 4),
-(7, 'Python', '600.00', 'En ligne', 2, 1, 4),
-(8, 'C++', '500.00', 'Présentiel', 4, 1, 4),
-(9, 'Frainçais', '700.00', 'Présentiel', 2, 2, 9),
-(10, 'Anglais', '500.00', 'Présentiel', 3, 1, 9);
+(4, 'JEE', 500.00, 'Présentiel', 1, 1, 4),
+(5, 'MERN Stack', 500.00, 'Hybride', 1, 2, 4),
+(6, 'Spring Boot', 100.00, 'Présentiel', 5, 1, 4),
+(7, 'Python', 600.00, 'En ligne', 2, 1, 4),
+(8, 'C++', 500.00, 'Présentiel', 4, 1, 4),
+(9, 'Frainçais', 700.00, 'Présentiel', 2, 2, 9),
+(10, 'Anglais', 500.00, 'Présentiel', 3, 1, 9);
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,19 @@ CREATE TABLE `formationdate` (
   `id` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `formation_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `formationdate`
+--
+
+INSERT INTO `formationdate` (`id`, `date`, `formation_id`) VALUES
+(8, '2025-07-12', 8),
+(9, '2025-05-07', 4),
+(10, '2025-07-01', 6),
+(11, '2025-07-02', 4),
+(12, '2025-07-08', 7),
+(13, '2025-07-09', 7);
 
 -- --------------------------------------------------------
 
@@ -122,8 +134,16 @@ CREATE TABLE `inscription` (
   `email` varchar(100) DEFAULT NULL,
   `company` varchar(100) DEFAULT NULL,
   `paid` tinyint(1) DEFAULT NULL,
-  `formationDate_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `formation_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `inscription`
+--
+
+INSERT INTO `inscription` (`id`, `firstName`, `lastName`, `phone`, `email`, `company`, `paid`, `formation_id`) VALUES
+(2, 'azer', 'msl', '0620108920', 'MSL@gmail.com', 'ser', 100, 9),
+(8, 'azeddine', 'maslouh', '0620107920', 'maslouhazeddine@gmail.com', '', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -135,7 +155,7 @@ CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `login`
@@ -153,7 +173,7 @@ INSERT INTO `login` (`id`, `email`, `password`) VALUES
 CREATE TABLE `pays` (
   `id` int(11) NOT NULL,
   `value` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pays`
@@ -174,7 +194,7 @@ CREATE TABLE `ville` (
   `id` int(11) NOT NULL,
   `value` varchar(100) NOT NULL,
   `pays_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ville`
@@ -224,7 +244,7 @@ ALTER TABLE `formationdate`
 --
 ALTER TABLE `inscription`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `formationDate_id` (`formationDate_id`);
+  ADD KEY `formation_id` (`formation_id`);
 
 --
 -- Indexes for table `login`
@@ -271,13 +291,13 @@ ALTER TABLE `formation`
 -- AUTO_INCREMENT for table `formationdate`
 --
 ALTER TABLE `formationdate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `inscription`
 --
 ALTER TABLE `inscription`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -319,7 +339,7 @@ ALTER TABLE `formationdate`
 -- Constraints for table `inscription`
 --
 ALTER TABLE `inscription`
-  ADD CONSTRAINT `inscription_ibfk_1` FOREIGN KEY (`formationDate_id`) REFERENCES `formationdate` (`id`);
+  ADD CONSTRAINT `inscription_ibfk_2` FOREIGN KEY (`formation_id`) REFERENCES `formation` (`id`);
 
 --
 -- Constraints for table `ville`

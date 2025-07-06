@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fs-3 text-primary fw-bolder" href="#" onclick="history.back()">FormationPro</a>
+            <a class="navbar-brand fs-3 text-primary fw-bolder" href="index.php">FormationPro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
