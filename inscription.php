@@ -12,7 +12,7 @@ class Inscription extends Database {
     private $table = "inscription";
     private $conn;
 
-   public function __construct() {
+    public function __construct() {
         $database = new Database();
         $this->conn = $database->connection();
     }

@@ -54,12 +54,22 @@ class Formation extends Database {
 
     
 
-    public function login($email, $password) {
-        $query = "SELECT * FROM login WHERE email = $email AND password = $password";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute(['email' => $email, 'password' => $password]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
+    // public function login($email, $password) {
+    //     $query = "SELECT * FROM login WHERE email = $email AND password = $password";
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->execute(['email' => $email, 'password' => $password]);
+    //     return $stmt->fetch(PDO::FETCH_ASSOC);
+    // }
+    //     public function login($email, $password) {
+    //     $sql = $this->conn->prepare("SELECT * FROM $this->table WHERE email = ? AND password = ?");
+    //     $sql->bind_param("ss", $email, $password);
+    //     $sql->execute();
+    //     $result = $sql->get_result();
+    //     if ($result && $result->num_rows > 0) {
+    //         return $result->fetch_assoc();
+    //     }
+    //     return [];
+    // }
 
     public function setId($id) {
         $this->id = $id;
