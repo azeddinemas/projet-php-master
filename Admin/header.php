@@ -20,47 +20,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Client/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <title>Gestion formation</title>
-    <style>
-    .active {
-        color: white !important;
-        background-color: #00C1FE;
-        border-radius: 8px;
-    }
-
-    .nav-link:hover {
-        background-color: #00C1FE;
-        border-radius: 8px;
-        color: white !important;
-    }
-
-    #label {
-        border-radius: 6px;
-        box-shadow: 0 2px 5px rgb(0 0 0 / 46%);
-        display: none;
-    }
-
-    @media (max-width:991px) {
-        .container-fluid #sid {
-            margin-left: -760px;
-            position: fixed;
-            transition: 0.8s;
-            z-index: 1;
-            box-shadow: 9px 0px 46px #727070;
-        }
-
-        .container-fluid #menu:checked+#sid {
-            margin-left: 0px;
-        }
-
-        #label {
-            display: block;
-        }
-    }
-    </style>
 </head>
 
 <body>
@@ -83,7 +46,7 @@
                     </a>
                     <br />
                     <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "formationList.php") echo 'active'; ?>" href="formationList.php">
-                        <i class="bi bi-book fs-5 me-2"></i>&nbsp;&nbsp;Formation
+                        <i class="bi bi-book fs-5 me-2"></i>&nbsp;Formation
                     </a>
                     <br />
                     <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "domainList.php") echo 'active'; ?>" href="domainList.php">
@@ -91,15 +54,15 @@
                     </a>
                     <br />
                     <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "inscriptionList.php") echo 'active'; ?>" href="inscriptionList.php">
-                        <i class="bi bi-people me-2 fs-5"></i> Inscription
+                        <i class="bi bi-mortarboard me-2 fs-5"></i>&nbsp;Inscription
                     </a>
                     <br />
                     <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "formateurList.php") echo 'active'; ?>" href="formateurList.php">
-                        <i class="bi bi-mortarboard me-2 fs-5"></i>&nbsp; Formateur
+                        <i class="bi bi-people me-2 fs-5"></i>&nbsp;Formateur
                     </a>
                     <br />
                     <a class="nav-link p-2" href="">
-                        <i class="bi bi-sliders me-2 fs-5"></i> settings
+                        <i class="bi bi-sliders me-2 fs-5"></i>&nbsp;settings
                     </a>
                     <br />
                 </nav>

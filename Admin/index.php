@@ -3,6 +3,11 @@ session_start();
 require_once "../login.php";
 
 $login = new Login();
+if ($login->verifySession()) {
+   header('Location: dashboard.php');
+   exit();
+} 
+
 if (isset($_POST['login'])) {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
@@ -21,6 +26,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
 <!doctype html>
 <html lang="en">
 

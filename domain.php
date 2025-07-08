@@ -2,8 +2,9 @@
     require_once 'Db.php';
     class Domain extends Database {
         private $name;
-        private $url;
         private $id;
+        private $conn;
+        private $table = "domaine";
 
         public function __construct() {
             $database = new Database();
@@ -22,15 +23,7 @@
             $this->id = $id;
         }
 
-        public function getName() {
-            $query = "SELECT * FROM domaine WHERE id = $this->id";
-            $stmt = $this->conn->query($query);
-            return $stmt->fetch();
-        }
-
-        public function getUrl() {
-            return $this->url;
-        }
+   
     }
 
 ?>

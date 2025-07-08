@@ -25,11 +25,9 @@ class Login extends Database {
     public function verifySession() {
         if (isset($_SESSION['email'])) {
             return $_SESSION['email'];
-        } elseif (isset($_COOKIE['user'])) {
-            $_SESSION['email'] = json_decode($_COOKIE['user'], true);
-            return $_SESSION['email'];
+        } else {
+            return null;
         }
-        return null;
     }
 
     public function logout() {
@@ -40,5 +38,11 @@ class Login extends Database {
         exit();
     }
     
+    public function getCount($table) {
+        $query = "SELECT COUNT(*) as count FROM $table";
+        $stmt = $this->conn->query($query);
+        $result = $stmt->fetch_assoc();
+        return $result['count'];
+    }
 }
 ?>
