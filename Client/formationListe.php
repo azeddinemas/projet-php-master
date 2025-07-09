@@ -35,7 +35,7 @@
 
                 <div class="col">
                     <div class="card shadow p-2 mb-5 rounded">
-                        <img src="../assets/p-6.jpeg" class="card-img-top rounded-3">
+                        <img src="<?php if (isset($formation['photo'])) { echo '../assets/formateurs/' . $formation['photo']; } else { echo '../assets/p-6.jpg'; } ?>" class="card-img-top rounded-3">
                         <p class="position-absolute ms-2 mt-1 text-white bg-black bg-opacity-50 p-1 pe-2 rounded-3 fs-5">
                             <i class="bi bi-geo fs-3 align-middle text-info"></i>&nbsp;<?= $formation['value'] ?>
                         </p>

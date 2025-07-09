@@ -15,7 +15,6 @@ if (isset($_POST['login'])) {
         $user = $login->login($email, $password);
         if ($user) {
             $_SESSION['email'] = $user["email"];
-            setcookie('user', json_encode($user), time() + (86400 * 30), "/");
             header('Location: dashboard.php');
             exit();
         } else {

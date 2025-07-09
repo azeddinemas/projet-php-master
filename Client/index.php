@@ -76,7 +76,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card category-card shadow-sm border-0 h-100">
                     <div class="card-body p-4">
-                        <div class="icon-box bg-primary bg-opacity-10 text-primary "><?= $icons[$domain['name']] ?></div>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary "><?= $icons[$domain['name']] ?? '' ?></div>
                         <h4 class="card-title fw-bold"><?= $domain['name']; ?></h4>
                         <p class="card-text text-muted mb-3">
                             <?= $domain['description']; ?>

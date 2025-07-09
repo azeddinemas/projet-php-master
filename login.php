@@ -32,7 +32,6 @@ class Login extends Database {
 
     public function logout() {
         unset($_SESSION['email']);
-        setcookie('user', '', time() - 3600, "/");
         session_destroy();
         header('Location: index.php');
         exit();

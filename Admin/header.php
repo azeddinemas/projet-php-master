@@ -12,6 +12,9 @@
     if (isset($_GET['logout'])) {
         $login->logout();
     }
+
+    $url = basename($_SERVER["PHP_SELF"]);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,27 +44,31 @@
                 <p class="text-info">admin</p>
                 <hr />
                 <nav class="text-start p-2 ">
-                    <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "dashboard.php") echo 'active'; ?>" href="dashboard.php">
+                    <a class="nav-link p-2 <?php if($url == "dashboard.php") echo 'active'; ?>" href="dashboard.php">
                         <i class="bi bi-speedometer2 fs-5 me-2"></i>&nbsp;Dashboard
                     </a>
                     <br />
-                    <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "formationList.php") echo 'active'; ?>" href="formationList.php">
+                    <a class="nav-link p-2 <?php if($url == "formationList.php"|| $url == "editformation.php") echo 'active'; ?>" href="formationList.php">
                         <i class="bi bi-book fs-5 me-2"></i>&nbsp;Formation
                     </a>
                     <br />
-                    <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "domainList.php") echo 'active'; ?>" href="domainList.php">
+                    <a class="nav-link p-2 <?php if($url == "domainList.php" || $url == "editDomain.php") echo 'active'; ?>" href="domainList.php">
                         <i class="bi bi-grid fs-5 me-2"></i>&nbsp;Domaines
                     </a>
                     <br />
-                    <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "inscriptionList.php") echo 'active'; ?>" href="inscriptionList.php">
-                        <i class="bi bi-mortarboard me-2 fs-5"></i>&nbsp;Inscription
-                    </a>
-                    <br />
-                    <a class="nav-link p-2 <?php if(basename($_SERVER["REQUEST_URI"]) == "formateurList.php") echo 'active'; ?>" href="formateurList.php">
+                    <a class="nav-link p-2 <?php if($url == "formateurList.php" || $url == "editFormateur.php") echo 'active'; ?>" href="formateurList.php">
                         <i class="bi bi-people me-2 fs-5"></i>&nbsp;Formateur
                     </a>
                     <br />
-                    <a class="nav-link p-2" href="">
+                    <a class="nav-link p-2 <?php if($url == "villeList.php" || $url == "editVille.php") echo 'active'; ?>" href="villeList.php">
+                        <i class="bi bi-pin-map me-2 fs-5"></i>&nbsp;Ville
+                    </a>
+                    <br />
+                    <a class="nav-link p-2 <?php if($url == "pays.php" || $url == "editPays.php") echo 'active'; ?>" href="pays.php">
+                        <i class="bi bi-globe-europe-africa me-2 fs-5"></i>&nbsp;Pays
+                    </a>
+                    <br />
+                    <a class="nav-link p-2" href="#">
                         <i class="bi bi-sliders me-2 fs-5"></i>&nbsp;settings
                     </a>
                     <br />
